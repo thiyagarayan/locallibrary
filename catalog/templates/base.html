@@ -13,7 +13,7 @@
       crossorigin="anonymous" />
     <!-- Add additional CSS in static file 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />  -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" /> -->
   </head>
   <body>
     <div class="container-fluid">
@@ -22,8 +22,8 @@
           {% block sidebar %}
             <ul class="sidebar-nav">
               <li><a href="{% url 'index' %}">Home</a></li>
-              <li><a href="{% url 'books' %}">All books</a></li>
-              <li><a href="">All authors</a></li>
+              <li><a href="{% url 'All-books' %}">All books</a></li>
+              <li><a href="{% url 'all-authors' %}">All authors</a></li>
             </ul>
           {% endblock %}
         </div>
@@ -32,3 +32,4 @@
     </div>
   </body>
 </html>
+

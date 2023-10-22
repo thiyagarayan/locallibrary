@@ -1,7 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Book, Author, BookInstance, Genre
+from .models import Book, Author, BookInstance,Genre
+from django.views import generic
 
+class BookDetailView(generic.DetailView):
+    model = Book
+class AuthorDetail(generic.DetailView):
+    model = Author
+class AuthorList(generic.ListView):
+    model = Author
+    template_name='authors.html'
+
+
+class BookListView(generic.ListView):
+    model = Book
+    template_name = 'books.html'
+    
 def index(request):
     """View function for home page of site."""
 
@@ -24,6 +38,5 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'index.html', context=context)
-def books(request):
-    return HttpResponse('all books')
+
 
